@@ -1,0 +1,283 @@
+.forms{
+
+  &__login{
+    @include flexGen(column, nowrap, center, flex-end);
+    max-width: 400px;
+
+    label{
+      font-family: $font-bold;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      &:last-of-type{
+        @include flexGen(row, wrap, space-between, center);
+      }
+    }
+
+    input{
+      @extend %inputs;
+    }
+
+    a{
+      color: colors(second);
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__sign-up{
+    @include flexGen(row, wrap, flex-end, center);
+    max-width: 400px;
+
+    input{
+      @extend %inputs;
+
+      &[type="checkbox"]{
+        width: 40px;
+        height: 40px;
+        margin-right: 1rem;
+      }
+    }
+
+    label{
+      font-family: $font-bold;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      &:first-of-type{
+        margin-right: auto;
+        margin-left: 0;
+      }
+
+      &:first-of-type, &:nth-of-type(2){
+        width: 45%;
+      }
+
+
+      &:last-of-type{
+        @include flexGen(row, nowrap, space-between, center);
+
+        p{
+          line-height: 1.5;
+        }
+
+        a{
+          color: colors(second);
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__login, &__sign-up{
+
+    button{
+      @extend %btn;
+      background: colors(second);
+      border: 0;
+      color: lighten(colors(lightBg), 100%);
+      transition: background .5s ease;
+      font-family: $font-bold;
+
+      &:hover{
+        background: colors(prime);
+      }
+
+      &:disabled{
+        opacity: .5;
+        cursor: not-allowed;
+        background: colors(second);
+      }
+    }
+  }
+
+  &__search{
+    @include flexGen(row, nowrap, center, flex-end);
+
+    @include firstBrk{
+      position: absolute;
+      bottom: -2rem;
+      right: 0;
+      margin-left: 0 !important;
+    }
+
+    @include forthBrk{
+      position: initial;
+      padding: 0 0 0 2rem;
+    }
+
+    input[type="search"]{
+      min-width: 230px;
+      flex-grow: 2;
+      border-bottom: 2px solid colors(lightBg);
+      padding: .3rem 0;
+      transition: border-bottom .5s ease;
+
+      @include forthBrk{
+        min-width: 320px;
+      }
+
+      &:focus, &:hover{
+        border-bottom: 2px solid colors(second);
+      }
+    }
+
+    button{
+      background: transparent;
+      border: 0;
+      color: colors(second);
+      font-size: 1.5rem;
+      transition: color .5s ease;
+
+      &:hover{
+        color: colors(prime);
+      }
+    }
+  }
+
+  &__profile{
+    @include flexGen(row, wrap, space-between, center);
+    width: 100%;
+    // margin-left: 2rem;
+
+    &:first-of-type{
+      margin-bottom: 4rem;
+    }
+
+    &:nth-of-type(2) {
+      label{
+        width: 100%;
+      }
+    }
+
+    &-title{
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      font-family: $font-bold;
+      color: colors(accent);
+      // margin-left: 2rem;
+    }
+
+    label{
+      width: 100%;
+      margin-bottom: 2rem;
+
+      @media screen and (min-width: 600px){
+        width: 48%;
+      }
+
+      &:nth-of-type(3), &:nth-of-type(4){
+        width: 100%;
+      }
+    }
+
+    p{
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: colors(accent)
+    }
+
+    input, textarea{
+      background: lighten(colors(lightBg), 7%);
+      width: 100%;
+      padding: 1rem;
+      border: 0;
+      font-family: $font-regular;
+      border-radius: 10px;
+    }
+
+    textarea{
+      min-height: 200px;
+    }
+
+    button{
+      @extend %btn;
+      background: colors(second);
+      color: lighten(colors(lightBg), 10%);
+      border: 0;
+    }
+  }
+
+  &__change-pic{
+    @include flexGen(column, nowrap, center, center);
+    background: lighten(colors(lightBg), 7%);
+    width: 100%;
+    padding: 2rem;
+    margin-bottom: 4rem;
+
+    @include secondBrk{
+      width: 25%;
+    }
+
+    p{
+
+      &:first-of-type{
+        font-size: 1.2rem;
+        font-family: $font-bold;
+        margin-bottom: 1rem;
+      }
+
+      &:nth-of-type(2){
+        color: colors(second);
+        margin-bottom: 3rem;
+      }
+    }
+
+    label{
+      cursor: pointer;
+      margin-bottom: 2rem;
+    }
+
+    button{
+      @extend %btn;
+      background: colors(second);
+      border: 0;
+      color: lighten(colors(lightBg), 10%);
+    }
+
+    figure{
+      @include flexGen(row, nowrap, center, center);
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      width: 170px;
+      height: 170px;
+
+      img{
+        height: 100%;
+      }
+
+      figcaption{
+        @include flexGen(row, nowrap, center, center);
+        background: rgba(colors(darkBg), .3);
+        color: lighten(colors(lightBg), 10%);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        // opacity: 0;
+        transition: all .5s ease;
+      }
+
+      &:hover{
+        figcaption{
+          opacity: 1;
+        }
+      }
+    }
+
+    form{
+      @include flexGen(column, nowrap, center, center);
+
+      input[type="file"]{
+        display: none;
+      }
+    }
+  }
+}

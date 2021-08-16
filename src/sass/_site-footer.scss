@@ -1,0 +1,95 @@
+.site-footer{
+  @include flexGen(row, nowrap, center, center);
+  @include bgGrad(180deg, 1);
+
+  @include secondBrk {
+    background: colors(lightBg);
+  }
+
+  &__inner{
+    @include flexGen(column, nowrap, center, center);
+    max-width: $max-width;
+    width: 100%;
+    padding: 3rem 2rem;
+
+    @include secondBrk {
+      @include flexGen(row, nowrap, space-between, center);
+    }
+  }
+
+  &__logo{
+    width: 30% !important;
+    max-width: 115px;
+    margin-bottom: 2rem;
+
+    @include secondBrk {
+      width: 5% !important;
+      margin-bottom: 0 !important;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+
+  p{
+    @include flexGen(column, nowrap, center, center);
+    color: lighten(colors(lightBg), 100%);
+    line-height: 1.5;
+    order: 1;
+    margin-top: 1rem;
+
+    @include secondBrk{
+      @include flexGen(row, nowrap, space-between, center);
+      color: colors(darkBg);
+      margin-top: 0;
+      order: 0;
+
+      span{
+        margin-left: 3rem;
+      }
+    }
+
+    a{
+      color: lighten(colors(lightBg), 100%);
+
+      @include secondBrk{
+        color: colors(darkBg);
+      }
+    }
+  }
+
+  ul{
+    @include flexGen(column, nowrap, center, center);
+
+    @include secondBrk{
+      @include flexGen(row, nowrap, space-evenly, center);
+    }
+  }
+
+  li{
+    margin: .4rem 0;
+
+    @include secondBrk{
+      margin: 0 1rem;
+    }
+  }
+
+  a{
+    @include flexGen(row, nowrap, space-between, center);
+    color: lighten(colors(lightBg), 100%);
+    transition: color .5s ease;
+
+    @include secondBrk{
+      color: colors(darkBg);
+    }
+
+    &:hover{
+      color: colors(prime);
+
+      svg{
+        color: colors(prime);
+      }
+    }
+  }
+}

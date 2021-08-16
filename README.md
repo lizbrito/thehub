@@ -1,5 +1,0 @@
-1 - To install all the dependencies type: yarn
-2 - To start the React server type: yarn start
-3 - In another terminal, start the test back-end, type: json-server server.json -p 3333 -w
-
-If the 3rd step doesn't work, type: yarn global add json-server then repeat the 3rd step.

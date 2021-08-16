@@ -1,0 +1,49 @@
+.admin-panel{
+  @include gridGen(1fr 7fr, 50px auto, 0, 1rem);
+  height: 100%;
+  background: colors(lightBg);
+
+  &__login{
+    @include flexGen(column, nowrap, center, center);
+    grid-column: 1 / -1;
+    justify-self: center;
+    border: 1px solid colors(lightBg);
+    border-radius: 5px;
+    width: 450px;
+
+    img{
+      width: 72px;
+      margin-bottom: 2rem;
+    }
+
+    button{
+      margin-top: 1.5rem;
+    }
+
+    h2{
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: colors(second);
+      font-family: $font-bold;
+    }
+  }
+
+  &__top-nav{
+    grid-column: 1 / -1;
+    padding: 1rem;
+    background: colors(prime);
+  }
+
+  &__side-nav{
+    padding: 1rem;
+    background: colors(accent);
+
+    nav{
+      @include flexGen(column, nowrap, flex-start, flex-start);
+    }
+  }
+
+  &__body{
+    padding: 1rem;
+  }
+}

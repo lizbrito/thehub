@@ -1,0 +1,186 @@
+.single-post{
+  @include flexGen(column, nowrap, center, center);
+  max-width: 768px;
+  margin: 0 auto;
+
+  &__inner{
+    max-width: 768px;
+    margin: 3.125rem 1rem;
+
+    @include secondBrk{
+      margin: 3.125rem 0;
+    }
+  }
+
+  // POST TITLE
+  &__title{
+    @include flexGen(column, nowrap, space-between, center);
+
+    @include firstBrk{
+      @include flexGen(row, nowrap, space-between, center);
+    }
+
+    h1{
+      font-family: $font-bold;
+      color: colors(second);
+      font-size: 1.5rem;
+
+      @include firstBrk{
+        font-size: 2rem;
+      }
+    }
+
+    span{
+      cursor: pointer;
+    }
+
+    .favourite{
+      svg{
+        color: colors(accent);
+      }
+    }
+
+    svg{
+      width: 28px;
+      height: 28px;
+      color: #33333380;
+      align-self: flex-end;
+      margin-top: 1rem;
+
+      @include firstBrk{
+        margin: 0;
+      }
+    }
+  }
+
+
+  // AUTHOR INFO
+  &__details{
+    @include flexGen(column, nowrap, flex-start, center);
+    margin: 1rem 0 3rem 0;
+
+    @include firstBrk{
+      @include flexGen(row, nowrap, space-between, center);
+    }
+  }
+
+  &__author{
+    @include flexGen(row, nowrap, space-between, center);
+    margin: 0 0 2rem 0;
+
+    @include firstBrk{
+      margin: 0 8rem 0 0;
+    }
+
+
+    img{
+      object-fit: cover;
+      width: 30px;
+      height: 30px;
+      border-radius: 50px !important;
+      margin-right: 1rem;
+    }
+
+    p{
+      font-family: $font-bold;
+      font-size: 1rem;
+      width: 100%;
+
+
+    }
+  }
+
+  &__meta{
+    @include flexGen(row, nowrap, center, center);
+    color: #33333380;
+
+    span{
+      @include flexGen(row, nowrap, center, center);
+
+      &:first-of-type{
+        cursor: pointer;
+      }
+
+      svg{
+        margin: 0 .25rem;
+      }
+      margin: 0 1rem;
+    }
+  }
+
+  // POST COVER IMG
+  &__cover{
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  // POST DESCRIPTION
+  &__description{
+    margin: 2rem 0;
+    line-height: 2rem;
+    font-size: 1.18rem;
+  }
+
+  // INGRIDIENTS LIST
+  &__ingredients{
+    background: #F8F8F8;
+    border-radius: 10px;
+
+    &-inner{
+      padding: 2.5rem;
+      font-size: 1.25rem;
+      color: colors(prime);
+
+      span{
+        font-family: $font-bold;
+      }
+
+      ul{
+        margin: 1.75rem 0;
+        list-style-type: disc;
+        list-style-position: inside;
+      }
+
+      li{
+        margin-bottom: .7rem;
+      }
+
+      a{
+        font-size: 1rem;
+        color: colors(prime);
+        font-family: $font-bold;
+      }
+    }
+  }
+
+  // STEPS
+  &__steps{
+    margin-top: 3.3rem;
+
+    h2{
+      font-family: $font-bold;
+      color: colors(second);
+      font-size: 2.18rem;
+    }
+
+    ul{
+      margin: 2rem 0 5.4rem 0;
+    }
+
+    li{
+      margin: 3.125rem 0;
+    }
+
+    span{
+      font-family: $font-bold;
+      color: colors(prime);
+      font-size: 1.18rem;
+    }
+
+    p{
+      font-size: 1.18rem;
+      line-height: 2rem;
+      margin: 1rem 0 2rem 0;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+.dashboard{
+  @include flexGen(row, nowrap, center, flex-start);
+  margin-bottom: 3rem;
+  min-height: 70%;
+
+  &__inner{
+    @include flexGen(column, nowrap, space-between, center);
+    max-width: $max-width;
+    width: 100%;
+    padding: 1rem;
+
+    @include firstBrk{
+      padding: 2rem;
+    }
+
+    @include secondBrk{
+      @include flexGen(row, nowrap, space-between, flex-start);
+    }
+
+    &--profile{
+      @include flexGen(column, nowrap, space-between, center);
+      max-width: $max-width;
+      width: 100%;
+      padding: 1rem;
+
+      @include firstBrk{
+        padding: 2rem;
+      }
+
+      @include secondBrk{
+        @include flexGen(row, nowrap, flex-start, flex-start);
+      }
+    }
+  }
+
+  &__profile{
+    @include flexGen(column, nowrap, center, center);
+    background: lighten(colors(lightBg), 7%);
+    width: 100%;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+
+    @include secondBrk{
+      width: 25%;
+      padding: 2rem;
+    }
+
+    button{
+      @extend %btn;
+      border: 2px solid colors(second);
+      color: colors(second);
+      margin-top: 2rem;
+      transition: all .5s ease;
+
+      &:hover{
+        background: colors(second);
+        color: lighten(colors(lightBg), 100%);
+      }
+    }
+
+    a{
+      @extend %btn;
+      border: 2px solid colors(second);
+      color: colors(second);
+      margin-top: 4rem;
+      transition: all .5s ease;
+
+      &:hover{
+        background: colors(second);
+        color: lighten(colors(lightBg), 10%);
+      }
+    }
+
+    img{
+      border-radius: 100%;
+    }
+
+    p{
+      line-height: 1.5;
+
+      &:first-of-type{
+        font-family: $font-bold;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+      }
+
+      &:nth-of-type(2){
+        color: colors(second);
+
+      }
+
+      &:last-of-type{
+        text-align: center;
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  &__panel{
+    background: lighten(colors(lightBg), 7%);
+    width: 100%;
+    padding: 2rem 1rem;
+
+    @include secondBrk{
+      width: 72%;
+      padding: 2rem;
+    }
+
+    &--alt{
+
+      @include secondBrk{
+        padding: 4rem;
+      }
+    }
+
+    button{
+      @extend %btn;
+      display: block;
+      color: colors(second);
+      border: 2px solid colors(second);
+      margin: 1rem auto;
+      background: transparent;
+      transition: all .5s ease;
+
+      &:hover{
+        background: colors(second);
+        color: lighten(colors(lightBg), 100%);
+      }
+    }
+
+    .no-project{
+      p{
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__nav{
+    width: 100%;
+    font-size: 1rem;
+    font-family: $font-bold;
+    @include flexGen(row, nowrap, center, center);
+
+    @include secondBrk{
+      display: block !important;
+      font-size: 1.3rem;
+    }
+
+    a{
+      display: inline-block;
+      margin-right: 1.5rem;
+      color: colors(second);
+      padding-bottom: .5rem;
+
+      &:last-of-type{
+        margin-right: 0;
+      }
+    }
+
+    .active{
+      color: colors(accent);
+      border-bottom: 3px solid colors(accent);
+    }
+  }
+}

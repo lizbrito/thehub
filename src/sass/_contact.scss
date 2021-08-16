@@ -1,0 +1,74 @@
+.contact-form{
+  @include flexGen(column, wrap, center, flex-start);
+  margin: auto;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  max-width: 500px;
+  min-height: calc(100% - 324px);
+  font-family: $font-medium;
+  color: colors(accent);
+
+  h2 {
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-family: $font-bold;
+    margin: 1rem 0;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  label {
+    display: block;
+    padding: 0;
+    margin: 1rem 0;
+
+    p{
+      margin-bottom: 1rem;
+    }
+  }
+
+  input {
+    width: 100%;
+    font-size: 16px;
+    padding: 1rem;
+    background-color: colors(lightBg);
+    border: none;
+    border-radius: 8px;
+  }
+
+  textarea{
+    background-color: colors(lightBg);
+    border: none;
+    width: 100%;
+    min-height: 160px;
+    border-radius: 8px;
+    background-clip: padding-box;
+    font-family: $font-regular;
+    font-size: 16px;
+    padding: 1rem;
+    line-height: 1.5;
+  }
+
+  .btn {
+    @extend %btn;
+    background: colors(second);
+    border: 0;
+    color: lighten(colors(lightBg), 100%);
+    transition: background .5s ease;
+    font-family: $font-bold;
+    margin: 2rem 0;
+    margin-left: auto;
+
+    &:hover{
+      background: colors(prime);
+    }
+
+    &:disabled{
+      opacity: .5;
+      cursor: not-allowed;
+      background: colors(second);
+    }
+  }
+}

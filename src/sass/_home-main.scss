@@ -1,0 +1,28 @@
+.home-main{
+  @include flexGen(row, nowrap, center, center);
+
+  &__inner{
+    @include flexGen(column, nowrap, center, center);
+    max-width: $max-width;
+    width: 100%;
+
+    @include firstBrk{
+      margin: 0 2rem;
+    }
+  }
+
+  &__hero{
+    @include flexGen(row, nowrap, center, center);
+  }
+
+  &__title{
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+    font-family: $font-bold;
+
+    span{
+      color: colors(second);
+    }
+  }
+}

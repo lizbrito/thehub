@@ -1,0 +1,293 @@
+// Reset CSS
+@import 'reset';
+
+// Fonts
+@import 'fonts';
+
+// mixins
+@import 'mixins';
+
+// variables
+@import 'variables';
+
+// keyframes
+@import 'keyframes';
+
+// forms
+@import 'forms';
+
+// @imports
+@import 'site-header';
+@import 'site-footer';
+@import 'call-to';
+@import 'home-main';
+@import 'category-section';
+@import 'hero-section';
+@import 'post-section';
+@import 'category-list';
+@import 'sign-up';
+@import 'single-post';
+@import 'comments';
+@import 'mobile-menu';
+@import 'mobile-header';
+@import 'about';
+@import 'alerts';
+@import 'contact';
+@import 'dashboard';
+@import 'my-projects';
+@import 'insights';
+@import 'admin-panel';
+@import 'create-post';
+@import 'modal';
+@import 'document';
+@import 'favourite-list';
+
+// Globals
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: $font-regular;
+  min-height: 100%;
+  height: 100%;
+}
+
+html{
+  min-height: 100%;
+  height: 100%;
+}
+
+option{
+  text-transform: capitalize !important;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+}
+
+a{
+  text-decoration: none;
+  outline: none;
+
+  &:focus, &:active, &:hover{
+    outline: none;
+  }
+}
+
+select{
+  appearance: none;
+}
+
+input{
+
+  &[type="text"], &[type="search"]{
+    appearance: none;
+  }
+}
+
+strong{
+  font-family: $font-bold;
+}
+
+form{
+  width: 100%;
+}
+
+input{
+  font-family: $font-regular;
+
+  &[type="search"]{
+    border: 0;
+  }
+}
+
+button{
+  cursor: pointer;
+}
+
+#root{
+  height: 100%;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+.carousel{
+  .slide{
+    background: transparent;
+  }
+
+  &-slider{
+    .control{
+      &-prev{
+        left: .5rem !important;
+      }
+
+      &-next{
+        right: .5rem !important;
+      }
+
+      &-arrow{
+        top: 7rem !important;
+        height: 40px !important;
+        background: colors(second) !important;
+        opacity: 1 !important;
+        font-size: .7rem !important;
+        padding: .7rem !important;
+      }
+    }
+  }
+}
+
+.no-project{
+  @include flexGen(column, nowrap, center, center);
+  width: 100%;
+  padding: 4rem 0;
+
+  img{
+    width: 90px;
+  }
+
+  h3{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+  }
+
+  p{
+    font-family: $font-regular !important;
+    margin-top: 2rem !important;
+    width: 30%;
+  }
+
+  a{
+    @extend %btn;
+    margin-top: 3rem;
+    border: 2px solid colors(second);
+    color: colors(second);
+    transition: all;
+
+    &:hover{
+      background: colors(second);
+      color: lighten(colors(lightBg), 100%);
+    }
+  }
+}
+
+.avatar{
+  @include flexGen(row, nowrap, center, center);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  width: 170px;
+  height: 170px;
+
+  &__img{
+    height: 100%;
+    width: 100%;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+}
+
+.liked{
+  color: colors(second);
+}
+
+.spinner{
+  @include flexGen(column, nowrap, center, center);
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .5s ease;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+
+  &--active{
+    @include flexGen(column, nowrap, center, center);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(colors(darkBg), .5);
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 2rem;
+    color: white;
+    opacity: 1;
+    pointer-events: all;
+
+    img{
+      animation: heartbeat 1.5s ease-in-out infinite both;
+      width: 120px;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.no-result{
+  @include flexGen(row, nowrap, center, center);
+  grid-column: 1 / -1;
+  text-align: center;
+  height: 350px;
+  font-size: 1.5rem;
+}
+
+input[type="checkbox"]{
+
+  &:checked{
+
+    +{
+      .toggle{
+        @include flexGen(row, nowrap, none, center);
+        background: lighten(colors(accent), 10%);
+
+        span{
+          transform: translateX(130%);
+          background: colors(lightBg);
+        }
+      }
+    }
+  }
+}
+
+.toggle{
+  @include flexGen(row, nowrap, none, center);
+  background: lighten(colors(lightBg), 1%);
+  height: 32px;
+  width: 64px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all .5s ease;
+
+  span{
+    display: block;
+    background: lighten(colors(darkBg), 70%);
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    transform: translateX(20%);
+    transition: all .5s ease;
+  }
+}
+
+.line-height{
+  line-height: 1.5;
+}

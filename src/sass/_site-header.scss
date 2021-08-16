@@ -1,0 +1,119 @@
+.site-header{
+  display: none;
+  padding: 1rem;
+  font-size: 1rem;
+
+  @include secondBrk{
+    @include flexGen(row, nowrap, center, center);
+    padding: 2rem;
+  }
+
+  &__inner{
+    @include flexGen(row, nowrap, flex-start, center);
+    max-width: $max-width;
+    width: 100%;
+    position: relative;
+  }
+
+  &__call-to{
+    @extend %btn;
+    color: lighten(colors(lightBg), 100%) !important;
+    background: colors(second);
+    font-size: 1rem;
+    transition: background .5s ease;
+
+    &:hover{
+      background: colors(prime);
+    }
+  }
+
+  &__logo{
+    width: 22%;
+    padding-left: 2rem;
+
+    @include firstBrk{
+      width: 75px;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+
+  &__submenu{
+    @include flexGen(column, nowrap, center, center);
+    position: absolute;
+    background: colors(lightBg);
+    padding: 1rem;
+    margin-left: -1rem;
+    width: 220%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+    z-index: 9999;
+
+    li{
+      margin: 0 0 1.5rem 0 !important;
+    }
+
+    a{
+      padding: 0 !important;
+    }
+  }
+
+  &__menu{
+    display: none;
+    margin-left: auto;
+
+    @include firstBrk{
+      @include flexGen(row, nowrap, space-evenly, center);
+    }
+
+    svg{
+      position: relative;
+      left: .25rem;
+      color: colors(second);
+    }
+  }
+
+  &__avatar{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  li{
+    margin: 0 1rem;
+    position: relative;
+    display: block;
+
+    &:hover{
+
+      .site-header__submenu{
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+
+  a{
+    @include flexGen(row, nowrap, space-between, center);
+    color: colors(darkBg);
+    transition: color .5s ease, background .5s ease;
+    padding: 1rem 0;
+
+    &:hover{
+      color: colors(second);
+    }
+  }
+
+  form{
+    width: 30%;
+    margin-left: 2rem;
+  }
+}

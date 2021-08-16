@@ -1,0 +1,182 @@
+.category-list{
+  @include flexGen(row, nowrap, center, center);
+  width: 100%;
+  padding-bottom: 8rem;
+  padding: 0 1rem;
+
+  @include firstBrk{
+    padding: 0 2rem;
+  }
+
+  &__inner{
+    @include flexGen(column, nowrap, center, flex-start);
+    max-width: $max-width;
+    width: 100%;
+    padding: 2rem 0 6rem 0;
+  }
+
+  &__heading{
+    @include flexGen(column, nowrap, center, flex-start);
+    width: 100%;
+
+    @include secondBrk{
+      @include flexGen(row, nowrap, flex-start, center);
+    }
+
+    h2{
+      margin-bottom: .5rem;
+
+      @include secondBrk{
+        margin-bottom: 2rem;
+      }
+    }
+
+    p{
+      font-size: 1rem !important;
+      line-height: 2rem;
+      width: 100% !important;
+
+
+      @include secondBrk{
+        font-size: 1.1875rem;
+        width: 50% !important;
+        padding: 0 2rem;
+      }
+    }
+  }
+
+  &__list{
+    @include flexGen(row, wrap, flex-start, flex-start);
+    width: 100%;
+
+    @include firstBrk{
+      @include flexGen(row, wrap, space-between, flex-start);
+    }
+
+    @include thirdBrk{
+      @include flexGen(row, wrap, flex-start, flex-start);
+    }
+  }
+
+  &__gradient{
+    @include flexGen(column, nowrap, flex-end, flex-start);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.8) 100%);
+    height: 100%;
+    padding: 2rem;
+  }
+
+  &__box{
+    width: 100%;
+    height: 500px;
+    background-size: 110% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    color: lighten(colors(lightBg), 10%);
+    transition: all .5s ease !important;
+    margin-top: 2rem;
+
+    @include firstBrk{
+      width: calc(50% - 2.7rem);
+      height: 550px;
+
+      &:nth-of-type(2n){
+        margin-top: 9rem;
+      }
+    }
+
+    @include thirdBrk{
+      width: calc(33.33% - 2.7rem);
+      height: 550px;
+    }
+
+    &:nth-of-type(3n + 1){
+
+      @include thirdBrk{
+        margin-right: 4rem;
+        margin-top: -9rem;
+      }
+    }
+
+    &:nth-of-type(3n + 2){
+
+      @include thirdBrk{
+        margin-right: 4rem;
+        margin-top: -3rem;
+      }
+    }
+
+    &:nth-of-type(3n){
+
+      @include thirdBrk{
+        margin-top: 3rem;
+      }
+    }
+
+    &:first-of-type(){
+
+      @include thirdBrk{
+        margin-top: 0;
+      }
+    }
+
+    &:nth-of-type(2){
+
+      @include thirdBrk{
+        margin-top: 6rem;
+      }
+    }
+
+    &:nth-of-type(3){
+
+      @include thirdBrk{
+        margin-top: 12rem;
+      }
+    }
+
+    &:hover{
+
+      @include firstBrk{
+        background-size: 120% !important;
+
+        h3{
+          transform: translateY(-50px);
+        }
+
+        p{
+          transform: translateY(-50px);
+        }
+      }
+    }
+  }
+
+  h3{
+    font-size: 2rem;
+    font-family: $font-bold;
+    margin-bottom: 1rem;
+    transition: transform .2s;
+  }
+
+  p{
+    width: 100%;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    transition: transform .2s;
+
+    @include secondBrk{
+      width: 50%;
+    }
+
+    &:not(:last-of-type){
+      margin-bottom: 1rem;
+    }
+
+    svg{
+      margin-left: .5rem;
+      margin-top: .1rem;
+    }
+
+    &:last-of-type{
+      @include flexGen(row, wrap, flex-start, center);
+    }
+  }
+}

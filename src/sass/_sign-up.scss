@@ -1,0 +1,68 @@
+.sign-up{
+  @include flexGen(column, nowrap, flex-start, center);
+  background: url("../assets/static/the-hub-signin-bg.png") no-repeat center;
+  background-size: cover;
+  color: white;
+  min-height: 100%;
+  padding-bottom: 7rem;
+
+  &__inner{
+    @include flexGen(column, nowrap, center, center);
+    max-width: $max-width;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  &__header{
+    @include flexGen(row, nowrap, center, center);
+    width:100%;
+    padding: 3rem 1rem;
+    margin-bottom: 6rem;
+
+    @include thirdBrk {
+      padding: 3rem;
+    }
+  }
+
+  &__menu-outter{
+    @include flexGen(row, nowrap, space-between, center);
+    max-width: $max-width;
+    width: 100%;
+  }
+
+  &__logo{
+    width: 50px;
+
+    @include thirdBrk {
+      width: 100px;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+
+  ul{
+    @include flexGen(column, nowrap, space-between, center);
+
+    @include firstBrk {
+      @include flexGen(row, nowrap, space-between, center);
+    }
+
+    li:first-of-type{
+      padding-bottom: 1.5rem;
+
+      @include firstBrk {
+        margin-right: 2rem;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  h1{
+    font-family: $font-bold;
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+}

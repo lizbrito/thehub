@@ -1,0 +1,84 @@
+.my-projects{
+  @include gridGen(repeat(1, 1fr), auto, 2rem, 2rem);
+  padding-top: 2rem;
+
+  @include firstBrk{
+    @include gridGen(repeat(2, 1fr), auto, 2rem, 2rem);
+  }
+
+  @include secondBrk{
+    @include gridGen(repeat(3, 1fr), auto, 2rem, 2rem);
+  }
+
+  &__box{
+    position: relative;
+
+    &:hover{
+      .my-projects__info{
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__info{
+    @include flexGen(row, nowrap, flex-start, center);
+    background: rgba(colors(darkBg), .4);
+    padding: .5rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: lighten(colors(lightBg), 10%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .2s ease;
+
+    a{
+      display: flex;
+      align-items: center;
+      color: lighten(colors(lightBg), 10%);
+      border: 0;
+      font-size: 1.5rem;
+      transition: color .2s ease;
+
+      &:hover{
+        color: darken(colors(lightBg), 5%);
+      }
+    }
+  }
+
+  h2{
+    line-height: 1.5;
+    margin-top: .5rem;
+
+    a{
+      color: colors(darkBg);
+      transition: color .2s ease;
+
+      &:hover{
+        color: colors(second);
+      }
+    }
+  }
+
+  ul{
+    @include flexGen(row, nowrap, flex-start, center);
+    margin-left: auto;
+
+    svg{
+      margin-right: .5rem;
+    }
+  }
+
+  li{
+    @include flexGen(row, nowrap, center, center);
+    margin-left: .5rem;
+  }
+
+  img{
+    width: 100%;
+    border-radius: 5px;
+  }
+}

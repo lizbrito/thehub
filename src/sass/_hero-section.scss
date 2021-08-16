@@ -1,0 +1,103 @@
+.hero-section{
+  @include flexGen(column, nowrap, center, center);
+  width: 100%;
+  margin: 2rem 0;
+
+  @include firstBrk{
+    @include flexGen(row, nowrap, center, center);
+  }
+
+  &__left{
+    @include flexGen(column, nowrap, center, center);
+    order: 1;
+    width: 100%;
+    padding: 2rem 1rem;
+
+    @include firstBrk{
+      @include flexGen(column, nowrap, center, flex-start);
+      order: 0;
+      width: 50%;
+      padding: 0;
+      align-self: flex-end;
+    }
+
+    h1{
+      font-family: $font-medium;
+      font-size: 4rem;
+      line-height: 1.2;
+      margin-top: 2rem;
+    }
+
+    p{
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+
+    form{
+      @include flexGen(row, nowrap, center, center);
+
+      @include firstBrk{
+        @include flexGen(row, nowrap, flex-start, center);
+      }
+
+      label{
+        width: 220px;
+
+        @include firstBrk{
+          width: 40%;
+          min-width: 215px;
+        }
+      }
+
+      input[type="search"]{
+        width: 220px;
+        border-bottom: 2px solid colors(lightBg);
+        padding: 1rem 0;
+        transition: border-bottom .5s ease;
+
+        @include firstBrk{
+          width: 100%;
+          min-width: 215px;
+        }
+
+        &:focus, &:hover{
+          border-bottom: 2px solid colors(second);
+        }
+      }
+    }
+
+    button{
+      background: transparent;
+      border: 0;
+      color: colors(second);
+      font-size: 1.5rem;
+      transition: color .5s ease;
+
+      &:hover{
+        color: colors(prime);
+      }
+    }
+  }
+
+  &__right{
+    position: relative;
+    margin: 0 1rem;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/static/the-hub-square.svg');
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 55%;
+
+    @include secondBrk{
+      width: 50%;
+    }
+
+    img{
+      width: 90%;
+      margin: 0 auto -3rem auto;
+      padding: 1.5rem 0 1.5rem 0;
+    }
+  }
+}

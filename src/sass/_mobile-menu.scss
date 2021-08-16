@@ -1,0 +1,138 @@
+%mobile{
+  @include flexGen(column, nowrap, flex-start, center);
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background: lighten(colors(lightBg), 1%);
+  transition: transform .2s ease;
+  top: 0;
+  bottom: 0;
+}
+
+.mobile-menu{
+  @extend %mobile;
+  transform: translateX(105%);
+
+  &--active{
+    @extend %mobile;
+    transform: translateX(0);
+  }
+
+  &__top, &__bottom{
+    width: 100%;
+  }
+
+  &__top{
+    @include flexGen(column, nowrap, center, center);
+    @include bgGrad(90deg, 1);
+    padding: 2rem 0;
+
+    figure{
+      // border-radius: 50%;
+      // overflow: hidden;
+      height: 80px !important;
+      width: 80px !important;
+
+      img{
+        width: 80px !important;
+        max-width: 80px !important;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__bottom{
+    @include flexGen(column, nowrap, flex-start, center);
+    height: 100%;
+    overflow-y: scroll;
+
+    a, button{
+      width: 100%;
+      display: block;
+      text-align: right;
+      border: 0;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      line-height: 1.5;
+      color: colors(accent);
+      padding: 1rem 3rem;
+      background: transparent;
+
+      svg{
+        margin-right: 1rem;
+        padding-top: .2rem;
+      }
+    }
+  }
+
+  &__call-to{
+    @extend %btn;
+    background: colors(second) !important;
+    width: auto !important;
+    color: lighten(colors(lightBg), 10%) !important;
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+
+  &__category{
+    width: 100%;
+  }
+
+  &__list{
+    @include gridGen(1fr, auto, 1rem, 1rem);
+    height: 0;
+    overflow: hidden;
+    grid-column: 1 / -1;
+
+    a{
+      opacity: 0;
+    }
+
+    &--active{
+      @include gridGen(1fr, auto, 1rem, 1rem);
+      height: auto !important;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+
+      a{
+        display: block;
+        width: 100%;
+        font-size: .8rem;
+        padding: 1rem !important;
+        margin-bottom: 0 !important;
+        text-align: center;
+        background: darken(colors(lightBg), 5%);
+      }
+    }
+  }
+
+  &__info{
+    margin-bottom: 2rem;
+  }
+
+  &__name{
+    font-size: 1.5rem;
+    color: lighten(colors(lightBg), 100%);
+    letter-spacing: .1rem;
+    margin-bottom: .5rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__email{
+    color: lighten(colors(lightBg), 100%);
+    opacity: .6;
+    text-align: center;
+  }
+
+  &__close-btn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: lighten(colors(lightBg), 100%);
+    background: transparent;
+    border: 0;
+  }
+}

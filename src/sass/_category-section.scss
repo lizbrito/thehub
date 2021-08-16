@@ -1,0 +1,70 @@
+.category-section{
+  @include flexGen(row, nowrap, center, center);
+  padding: 0 2rem;
+
+  &__inner{
+    @include flexGen(column, nowrap, center, center);
+    max-width: $max-width;
+    width: 100%;
+  }
+
+  &__hero{
+    @include flexGen(row, nowrap, center, center);
+  }
+
+  &__left{
+    width: 50%;
+    padding: 2rem;
+
+    h1{
+      font-family: $font-bold;
+      font-size: 4rem;
+      line-height: 5rem;
+      margin-top: 7rem;
+      margin-bottom: 1rem;
+      letter-spacing: .15rem;
+    }
+
+    p{
+      padding-right: 20rem;
+      font-size: 1.3rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  &__right{
+    width: 50%;
+    background: url('../assets/static/the-hub-square.svg');
+    background-position: top right;
+    background-repeat: no-repeat;
+    margin-right: 2rem;
+    padding-bottom: 0;
+
+    img{
+      width: 545px;
+      height: 414px;
+    }
+  }
+
+  &__filter{
+    padding: 4rem 2rem;
+    width: 100%;
+
+    form{
+      @include flexGen(row, nowrap, space-between, flex-end);
+    }
+
+    label{
+        font-size: 1rem;
+    }
+
+    button{
+        @extend %btn;
+        background: white;
+        color: colors(second);
+        border-color: colors(second);
+        border-style: solid;
+        font-size: .8rem;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.modal{
+  @include flexGen(row, nowrap, center, center);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(colors(darkBg), .5);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .2s ease;
+
+  &--active{
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__inner{
+    position: relative;
+    width: 500px;
+    background: colors(lightBg);
+    padding: 2rem;
+    border-radius: 8px;
+
+    p{
+      margin-bottom: 3rem !important;
+    }
+  }
+
+  p{
+    font-size: 1.2rem;
+    color: colors(accent);
+    margin-bottom: 1rem;
+  }
+
+  form{
+    @include flexGen(column, nowrap, center, center);
+    position: relative;
+    background: colors(lightBg);
+    width: 100%;
+    max-width: 550px;
+    padding: 3rem;
+    border-radius: 10px;
+  }
+
+  label{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  input{
+    @extend %input-project;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  select{
+    @extend %input-project;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  button{
+
+    &[type="submit"]{
+      @extend %btn;
+      color: colors(accent);
+      font-weight: bold;
+      border: 2px solid colors(accent);
+      background: transparent;
+      transition: all .5s ease;
+      margin-top: 2rem;
+
+      &:hover{
+        color: lighten(colors(lightBg), 10%);
+        background: colors(accent);
+      }
+    }
+
+    &[type="button"]{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      color: colors(accent);
+      font-size: 1.3rem;
+      font-weight: bold;
+      border: 0;
+
+      &:nth-of-type(2), &:nth-of-type(3){
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 40%;
+      }
+
+      &:nth-of-type(2){
+        margin-right: 20%;
+      }
+    }
+  }
+}
